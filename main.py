@@ -9,8 +9,8 @@ class Ventana(QWidget):
         super().__init__()
         self.setWindowTitle("RAMA MODI 1")
 
-        self.setGeometry(100, 100, 300, 200)  # x, y, ancho, alto
-        self.setStyleSheet("background-color:rgb(166,128,126);")
+        self.setGeometry(100, 100, 300, 300)  # x, y, ancho, alto
+        self.setStyleSheet("background-color:rgb(237, 185, 175);")
         self.inicializar_ui()
 
     def inicializar_ui(self):
