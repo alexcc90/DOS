@@ -7,7 +7,7 @@ from PyQt6.QtGui import QColor
 class Ventana(QWidget):
     def __init__(self):
         super().__init__()
-        self.setWindowTitle("RAMA DEVELOP")
+        self.setWindowTitle("RAMA MODI 1")
 
         self.setGeometry(100, 100, 400, 400)  # x, y, ancho, alto
         self.setStyleSheet("background-color:rgb(166,128,126);")
