@@ -6,7 +6,7 @@ from PyQt6.QtGui import QColor
 class Ventana(QWidget):
     def __init__(self):
         super().__init__()
-        self.setWindowTitle("Ventana con Botón Redondo")
+        self.setWindowTitle("RAMA DEVELOP...")
         self.setGeometry(100, 100, 300, 200)  # x, y, ancho, alto
         self.inicializar_ui()
 
