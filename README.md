@@ -4,7 +4,7 @@ Un proyecto increíble que hace cosas maravillosas con código.
 
 ## 📸 Captura de Pantalla
 
-![Captura de la Aplicación](https://via.placeholder.com/800x400/0088cc/ffffff?text=Mi+Aplicación)
+![Captura](recursos/cafe.jpg)
 *Imagen de ejemplo de la aplicación en funcionamiento*
 
 ## 🎥 Video Demo
