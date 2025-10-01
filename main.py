@@ -6,7 +6,7 @@ from PyQt6.QtGui import QColor
 class Ventana(QWidget):
     def __init__(self):
         super().__init__()
-        self.setWindowTitle("Ventana con Botón Redondo")
+        self.setWindowTitle("Botón Redondo")
         self.setGeometry(100, 100, 300, 200)  # x, y, ancho, alto
         self.inicializar_ui()
 
@@ -32,7 +32,7 @@ class Ventana(QWidget):
         boton.clicked.connect(self.boton_presionado)
 
     def boton_presionado(self):
-        print("¡Botón redondo presionado!")
+        print("¡Botón redondo presionado...!")
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
