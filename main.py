@@ -6,13 +6,13 @@ from PyQt6.QtGui import QColor
 class Ventana(QWidget):
     def __init__(self):
         super().__init__()
-        self.setWindowTitle("RAMA DEVELOP...")
+        self.setWindowTitle("RAMA DEVELOP")
         self.setGeometry(100, 100, 300, 200)  # x, y, ancho, alto
         self.inicializar_ui()
 
     def inicializar_ui(self):
         # Crear botón
-        boton = QPushButton("¡Clic!", self)
+        boton = QPushButton("¡DEVELOP!", self)
         boton.setGeometry(100, 60, 100, 100)  # x, y, ancho, alto
 
         # Hacer botón redondo usando estilos CSS
