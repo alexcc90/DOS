@@ -17,12 +17,12 @@ class Ventana(QWidget):
         # Crear botón
         boton = QPushButton("¡MASTER1!", self)
 
-        boton.setGeometry(100, 60, 100, 100)  # x, y, ancho, alto
+        boton.setGeometry(50, 30, 100, 100)  # x, y, ancho, alto
 
         # Hacer botón redondo usando estilos CSS
         boton.setStyleSheet("""
             QPushButton {
-                border-radius: 50px;  /* la mitad del ancho/alto para hacerlo redondo */
+                border-radius: 20px;  /* la mitad del ancho/alto para hacerlo redondo */
                 background-color: #e61263;
                 color: white;
                 font-size: 16px;
