@@ -9,7 +9,7 @@ class Ventana(QWidget):
         super().__init__()
         self.setWindowTitle("RAMA DEVELOP")
 
-        self.setGeometry(100, 100, 300, 200)  # x, y, ancho, alto
+        self.setGeometry(100, 100, 400, 400)  # x, y, ancho, alto
         self.setStyleSheet("background-color:rgb(166,128,126);")
         self.inicializar_ui()
 
