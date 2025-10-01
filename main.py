@@ -16,8 +16,10 @@ class Ventana(QWidget):
     def inicializar_ui(self):
         # Crear botón
         boton = QPushButton("¡DEVELOP!", self)
+        boton1 = QPushButton("¡DEVELOP!", self)
 
-        boton.setGeometry(100, 60, 100, 100)  # x, y, ancho, alto
+        boton.setGeometry(10, 30, 100, 100)  # x, y, ancho, alto
+        boton1.setGeometry(150, 30, 100, 100)
 
         # Hacer botón redondo usando estilos CSS
         boton.setStyleSheet("""
@@ -31,6 +33,18 @@ class Ventana(QWidget):
                 background-color: #8ee612;
             }
         """)
+
+        boton1.setStyleSheet("""
+                    QPushButton {
+                        border-radius: 40px;  /* la mitad del ancho/alto para hacerlo redondo */
+                        background-color: #e61263;
+                        color: white;
+                        font-size: 16px;
+                    }
+                    QPushButton:hover {
+                        background-color: #8ee612;
+                    }
+                """)
 
         # Conectar acción al botón
         boton.clicked.connect(self.boton_presionado)
