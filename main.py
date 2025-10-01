@@ -7,7 +7,7 @@ from PyQt6.QtGui import QColor
 class Ventana(QWidget):
     def __init__(self):
         super().__init__()
-        self.setWindowTitle("RAMA DEVELOP")
+        self.setWindowTitle("RAMA MODI 1")
 
         self.setGeometry(100, 100, 300, 200)  # x, y, ancho, alto
         self.setStyleSheet("background-color:rgb(166,128,126);")
@@ -15,7 +15,7 @@ class Ventana(QWidget):
 
     def inicializar_ui(self):
         # Crear botón
-        boton = QPushButton("¡DEVELOP!", self)
+        boton = QPushButton("¡MODI 1!", self)
 
         boton.setGeometry(100, 60, 100, 100)  # x, y, ancho, alto
 
