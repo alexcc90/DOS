@@ -1,61 +1,95 @@
 import sys
-from PyQt6.QtWidgets import QApplication, QWidget, QPushButton
-from PyQt6.QtCore import QSize
-from PyQt6.QtGui import QColor
+from PyQt6.QtWidgets import (QApplication, QMainWindow, QWidget, QVBoxLayout,
+                             QPushButton, QLabel)
+from PyQt6.QtCore import Qt
+from ventana import SecondWindow
 
 
-class Ventana(QWidget):
+class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
-        self.setWindowTitle("RAMA MODI 1")
-
-        self.setGeometry(100, 100, 400, 400)  # x, y, ancho, alto
-        self.setStyleSheet("background-color:rgb(166,128,126);")
         self.inicializar_ui()
 
     def inicializar_ui(self):
-        # Crear botón
-        boton = QPushButton("¡DEVELOP!", self)
-        boton1 = QPushButton("¡DEVELOP!", self)
+        # Configuración de la ventana principal
+        self.setWindowTitle('Ventana Principal')
+        self.setGeometry(300, 300, 400, 300)
 
-        boton.setGeometry(10, 30, 100, 100)  # x, y, ancho, alto
-        boton1.setGeometry(150, 30, 100, 100)
+        # Widget central y layout
+        central_widget = QWidget()
+        self.setCentralWidget(central_widget)
+        layout = QVBoxLayout(central_widget)
 
-        # Hacer botón redondo usando estilos CSS
-        boton.setStyleSheet("""
-            QPushButton {
-                border-radius: 20px;  /* la mitad del ancho/alto para hacerlo redondo */
-                background-color: #e61263;
-                color: white;
-                font-size: 16px;
-            }
-            QPushButton:hover {
-                background-color: #8ee612;
-            }
-        """)
+        # Título
+        title = QLabel('VENTANA PRINCIPAL')
+        title.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        title.setStyleSheet("font-size: 18px; font-weight: bold; margin: 20px;")
+        layout.addWidget(title)
 
-        boton1.setStyleSheet("""
+        # Botón para abrir segunda ventana
+        self.btn_open = QPushButton('Abrir Ventana 2')
+        self.btn_open.setStyleSheet("""
                     QPushButton {
-                        border-radius: 40px;  /* la mitad del ancho/alto para hacerlo redondo */
-                        background-color: #e61263;
+                        background-color: #4CAF50;
                         color: white;
-                        font-size: 16px;
+                        border: none;
+                        padding: 10px;
+                        font-size: 14px;
+                        border-radius: 5px;
                     }
                     QPushButton:hover {
-                        background-color: #8ee612;
+                        background-color: #45a049;
                     }
                 """)
+        self.btn_open.clicked.connect(self.open_second_window)
+        layout.addWidget(self.btn_open)
 
-        # Conectar acción al botón
-        boton.clicked.connect(self.boton_presionado)
+        # Botón para cerrar aplicación
+        self.btn_close = QPushButton('Cerrar Aplicación')
+        self.btn_close.setStyleSheet("""
+                    QPushButton {
+                        background-color: #f44336;
+                        color: white;
+                        border: none;
+                        padding: 10px;
+                        font-size: 14px;
+                        border-radius: 5px;
+                    }
+                    QPushButton:hover {
+                        background-color: #da190b;
+                    }
+                """)
+        self.btn_close.clicked.connect(self.close_application)
+        layout.addWidget(self.btn_close)
 
-    def boton_presionado(self):
-        print("¡Botón redondo presionado!")
+        # Espaciador
+        layout.addStretch()
+
+    def open_second_window(self):
+        """Abre la segunda ventana"""
+        self.second_window = SecondWindow()
+        self.second_window.show()
+
+    def close_application(self):
+        """Cierra la aplicación"""
         self.close()
 
 
-if __name__ == "__main__":
+def main():
     app = QApplication(sys.argv)
-    ventana = Ventana()
-    ventana.show()
+
+    # Estilo general de la aplicación
+    app.setStyleSheet("""
+        QMainWindow {
+            background-color: #f0f0f0;
+        }
+    """)
+
+    window = MainWindow()
+    window.show()
     sys.exit(app.exec())
+
+
+if __name__ == '__main__':
+    main()
+
