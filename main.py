@@ -12,7 +12,7 @@ class MainWindow(QMainWindow):
 
     def inicializar_ui(self):
         # Configuración de la ventana principal
-        self.setWindowTitle('Ventana Principal')
+        self.setWindowTitle('VERSION 1.2')
         self.setGeometry(300, 300, 400, 300)
 
         # Widget central y layout
